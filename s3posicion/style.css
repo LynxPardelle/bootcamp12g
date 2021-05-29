@@ -1,0 +1,77 @@
+body {
+  background: linear-gradient(145deg, #373737, #2e2e2e);
+}
+
+:root {
+  --area: 50px;
+}
+
+section {
+  margin: 25vh auto;
+  width: 50vw;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #373737, #2e2e2e);
+  box-shadow: 20px 20px 60px #1c1c1c, -20px -20px 60px #4a4a4a;
+  height: 50vh;
+  position: relative;
+}
+
+#top {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - (var(--area) / 2));
+}
+
+#left {
+  position: absolute;
+  left: 20px;
+  top: calc(50% - (var(--area) / 2));
+}
+
+#bottom {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - (var(--area) / 2));
+}
+
+#right {
+  position: absolute;
+  right: 20px;
+  top: calc(50% - (var(--area) / 2));
+}
+
+#center {
+  position: absolute;
+  top: calc(50% - (var(--area) / 2));
+  left: calc(50% - (var(--area) / 2));
+}
+
+.circle {
+  width: var(--area);
+  height: var(--area);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #373737, #2e2e2e);
+  box-shadow: 5px 5px 10px #181818, -5px -5px 10px #4e4e4e;
+}
+
+.circle:hover {
+  border-radius: 50%;
+  background: linear-gradient(145deg, #373737, #2e2e2e);
+  box-shadow: inset 10px 10px 20px #141414, inset -10px -10px 20px #525252;
+}
+
+.cuad {
+  width: var(--area);
+  height: var(--area);
+  background: #fc0303;
+  box-shadow: inset 10px 10px 20px #880202, inset -10px -10px 20px #ff0404;
+}
+
+.cuad:hover {
+  width: var(--area);
+  height: var(--area);
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ff0000, #e60000);
+  box-shadow: 20px 20px 40px #660000, -20px -20px 40px #ff0000,
+    20px -20px 40px #660000, -20px 20px 40px #ff0000;
+}
