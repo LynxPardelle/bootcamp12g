@@ -1,0 +1,189 @@
+* {
+  transition: 500ms;
+  color: white;
+}
+
+body {
+  background: linear-gradient(145deg, #5c7e5a, #4d6a4c);
+}
+
+h1 {
+  text-align: center;
+  margin: 60px auto;
+}
+
+form {
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+  position: relative;
+}
+
+#animacion-btn {
+  margin: 50px auto;
+  display: block;
+}
+
+#animacion-btn::after {
+  cursor: pointer;
+  position: absolute;
+  right: calc(50% - 100px);
+  text-align: center;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 30px;
+  font-size: 2em;
+  border-radius: 50px;
+  background: linear-gradient(225deg, #5c7e5a, #4d6a4c);
+  box-shadow: -10px 10px 20px #374c36, 10px -10px 20px #75a072;
+}
+
+#animacion-btn:not(:checked)::after {
+  content: "Activar animación";
+}
+
+#animacion-btn:checked::after {
+  content: "Desactivar animación";
+}
+
+#animacion-btn:checked ~ #animated-object div {
+  animation: animate-the-object 2.5s infinite linear;
+}
+
+#animated-object {
+  display: flex;
+  justify-content: space-around;
+}
+
+#animated-object div {
+  margin: 100px auto 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 45px;
+  background: #567654;
+  box-shadow: -10px 10px 20px #374c36, 10px -10px 20px #75a072;
+}
+
+#animated-object div:hover {
+  box-shadow: inset -10px 10px 20px #374c36, inset 10px -10px 20px #75a072;
+}
+
+#clock-section {
+  margin: 0 auto;
+  width: 75%;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr;
+  border-radius: 24px;
+  background: linear-gradient(225deg, #4d6a4c, #5c7e5a);
+  box-shadow: -10px 10px 20px #4b6749, 10px -10px 20px #61855f;
+  padding: 30px 0 60px 0;
+}
+
+#clock-section h2 {
+  grid-column: 1 / 4;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#clock {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(225deg, #5c7e5a, #4d6a4c);
+  box-shadow: -10px 10px 20px #4b6749, 10px -10px 20px #61855f;
+  grid-row: 4 / 9;
+  grid-column: 1 / 4;
+}
+
+.radio-hour {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 1%;
+  height: 1%;
+  align-self: center;
+}
+
+.radio-hour::after {
+  cursor: pointer;
+  position: absolute;
+  right: calc(50% - 50px);
+  top: calc(50% - 25px);
+  text-align: center;
+  box-sizing: border-box;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  font-size: 2em;
+  border-radius: 50px;
+  background: linear-gradient(225deg, #5c7e5a, #4d6a4c);
+  box-shadow: -10px 10px 20px #374c36, 10px -10px 20px #75a072;
+}
+
+#t12::after {
+  content: "12:00";
+}
+#t4-30::after {
+  content: "4:30";
+}
+#t6-45::after {
+  content: "6:45";
+}
+
+.manecilla {
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+}
+
+#manecilla-1 {
+  width: 50%;
+}
+
+#manecilla-2 {
+  width: 25%;
+}
+
+#t12:checked ~ #clock #manecilla-1 {
+  transform: rotate(-90deg);
+}
+
+#t12:checked ~ #clock #manecilla-2 {
+  transform: rotate(-90deg);
+}
+
+#t4-30:checked ~ #clock #manecilla-1 {
+  transform: rotate(90deg);
+}
+
+#t4-30:checked ~ #clock #manecilla-2 {
+  transform: rotate(45deg);
+}
+
+#t6-45:checked ~ #clock #manecilla-1 {
+  transform: rotate(180deg);
+}
+
+#t6-45:checked ~ #clock #manecilla-2 {
+  transform: rotate(90deg);
+}
+
+/* 
+transform: rotate(-25deg);
+transform-origin: 0% 0%;
+*/
+
+@keyframes animate-the-object {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
