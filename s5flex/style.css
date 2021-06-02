@@ -1,0 +1,58 @@
+body {
+  background: linear-gradient(145deg, #9da9c9, #bac9ef);
+  color: #aebcdf;
+  text-shadow: 2.5px 2.5px 5px #94a0be, -2.5px -2.5px 5px #c8d8ff;
+}
+
+h1 {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  width: 75%;
+  height: 150px;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  align-content: center;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #9da9c9, #bac9ef);
+  box-shadow: 5px 5px 10px #94a0be, -5px -5px 10px #c8d8ff;
+}
+
+div {
+  width: 12%;
+  height: 50px;
+  margin: 2.5%;
+  border-radius: 50px;
+  background: #aebcdf;
+  box-shadow: 5px 5px 10px #94a0be, -5px -5px 10px #c8d8ff;
+}
+
+div:hover {
+  box-shadow: inset 5px 5px 10px #94a0be, inset -5px -5px 10px #c8d8ff;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}

@@ -59,9 +59,31 @@ form {
   margin: 100px auto 50px;
   width: 100px;
   height: 100px;
-  border-radius: 45px;
+  border-radius: 45px 40px 47.5px 42.5px;
   background: #567654;
   box-shadow: -10px 10px 20px #374c36, 10px -10px 20px #75a072;
+  overflow: hidden;
+}
+
+#animated-object div::after {
+  display: block;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: overlay;
+  background-size: cover;
+}
+
+#animated-object div:first-of-type::after {
+  background: center center no-repeat url("https://picsum.photos/99");
+}
+
+#animated-object div:nth-of-type(2)::after {
+  background: center center no-repeat url("https://picsum.photos/101");
+}
+
+#animated-object div:last-of-type::after {
+  background: center center no-repeat url("https://picsum.photos/100");
 }
 
 #animated-object div:hover {
@@ -106,7 +128,9 @@ form {
   align-self: center;
 }
 
-.radio-hour::after {
+#t12::after,
+#t4-30::after,
+#t6-45::after {
   cursor: pointer;
   position: absolute;
   right: calc(50% - 50px);
@@ -119,26 +143,39 @@ form {
   font-size: 2em;
   border-radius: 50px;
   background: linear-gradient(225deg, #5c7e5a, #4d6a4c);
-  box-shadow: -10px 10px 20px #374c36, 10px -10px 20px #75a072;
 }
 
 #t12::after {
   content: "12:00";
 }
+
+#t12:not(:checked)::after {
+  box-shadow: -10px 10px 20px #374c36, 10px -10px 20px #75a072;
+}
+
 #t4-30::after {
   content: "4:30";
 }
+
+#t4-30:not(:checked)::after {
+  box-shadow: -10px 10px 20px #374c36, 10px -10px 20px #75a072;
+}
+
 #t6-45::after {
   content: "6:45";
+}
+
+#t6-45:not(:checked)::after {
+  box-shadow: -10px 10px 20px #374c36, 10px -10px 20px #75a072;
 }
 
 .manecilla {
   height: 10px;
   background-color: black;
   position: absolute;
-  top: 50%;
+  top: calc(50% - 5px);
+  transform-origin: 0% 50%;
   left: 50%;
-  transform-origin: 0% 0%;
 }
 
 #manecilla-1 {
@@ -149,12 +186,30 @@ form {
   width: 25%;
 }
 
+#clock-center {
+  width: 12.5px;
+  height: 12.5px;
+  position: absolute;
+  top: calc(50% - 6.25px);
+  left: calc(50% - 6.25px);
+  background-color: black;
+  border-radius: 50%;
+}
+
+#t12:checked::after {
+  box-shadow: inset -10px 10px 20px #374c36, inset 10px -10px 20px #75a072;
+}
+
 #t12:checked ~ #clock #manecilla-1 {
   transform: rotate(-90deg);
 }
 
 #t12:checked ~ #clock #manecilla-2 {
   transform: rotate(-90deg);
+}
+
+#t4-30:checked::after {
+  box-shadow: inset -10px 10px 20px #374c36, inset 10px -10px 20px #75a072;
 }
 
 #t4-30:checked ~ #clock #manecilla-1 {
@@ -165,6 +220,10 @@ form {
   transform: rotate(45deg);
 }
 
+#t6-45:checked::after {
+  box-shadow: inset -10px 10px 20px #374c36, inset 10px -10px 20px #75a072;
+}
+
 #t6-45:checked ~ #clock #manecilla-1 {
   transform: rotate(180deg);
 }
@@ -172,11 +231,6 @@ form {
 #t6-45:checked ~ #clock #manecilla-2 {
   transform: rotate(90deg);
 }
-
-/* 
-transform: rotate(-25deg);
-transform-origin: 0% 0%;
-*/
 
 @keyframes animate-the-object {
   0% {
