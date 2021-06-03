@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+$bright_orange: hsl(31, 77%, 52%);
+$dark_cyan: hsl(184, 100%, 22%);
+$very_dark_cyan: hsl(179, 100%, 13%);
+
+$transparent_white: hsla(0, 0%, 100%, 0.75);
+$vary_light_gray: hsl(0, 0%, 95%);
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+
+  body {
+    font-size: 15px;
+    font-family: "Lexend Deca", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: $vary_light_gray;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 2.5em;
+    }
+
+    main {
+      width: 75%;
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      overflow: hidden;
+
+      #orange_box {
+        background-color: $bright_orange;
+        button {
+          color: $bright_orange;
+        }
+      }
+
+      #green_box {
+        background-color: $very_dark_cyan;
+        button {
+          color: $very_dark_cyan;
+        }
+      }
+
+      #teal_box {
+        background-color: $dark_cyan;
+        button {
+          color: $dark_cyan;
+        }
+      }
+
+      div {
+        width: 100%;
+        height: 75%;
+        padding: 2.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        img {
+          width: 75px;
+        }
+
+        p {
+          color: $transparent_white;
+          font-size: 1em;
+        }
+
+        button {
+          width: 33%;
+          min-width: 120px;
+          padding: 1em;
+          border-style: none;
+          border-radius: 2em;
+          -webkit-border-radius: 2em;
+          -moz-border-radius: 2em;
+          -ms-border-radius: 2em;
+          -o-border-radius: 2em;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 950px) {
+  html {
+    body {
+      display: block;
+      main {
+        display: block;
+        margin: 3em auto;
+        height: auto;
+
+        div {
+          width: 75%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
